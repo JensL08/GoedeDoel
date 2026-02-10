@@ -3,6 +3,7 @@ import java.math.BigDecimal;
 public class GoedeDoel {
     private final String naam;
     private BigDecimal opbrengst = BigDecimal.ZERO;
+
     public GoedeDoel(String naam) {
         this.naam = naam;
     }
@@ -13,5 +14,10 @@ public class GoedeDoel {
 
     public BigDecimal getOpbrengst() {
         return opbrengst;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return object instanceof GoedeDoel ander && naam.equalsIgnoreCase(ander.naam);
     }
 }
